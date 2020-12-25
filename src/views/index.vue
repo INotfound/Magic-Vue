@@ -1,13 +1,20 @@
 <template>
     <div class="content">
         <div class="center">
-            <div style="width:65%">
+            <div style="width:20%">
+                <div style="position: fixed;">
+                    <avatar />
+                </div>
+            </div>
+
+            <div style="width:60%">
                 <div class="title">
                     <h3>最新发布</h3>
                 </div>
                 <articlelist :articleInfo="articleListInfo" />
             </div>
-            <div style="width:24%">
+
+            <div style="width:20%">
                 <div style="position: fixed;">
                     <avatar />
                 </div>
@@ -50,12 +57,12 @@ export default {
 <style>
 .content{
     display: flex;
-    padding-top: 60px;
-    align-items: center;
-    justify-content: center;
+    padding-top: 80px;
+    /* align-items: center; */
+    justify-content: space-between;
 }
 .center{
-    width: 60%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
 }

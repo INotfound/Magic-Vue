@@ -7,23 +7,23 @@
                             alt
                             :src="item.imgUrl"
                             height="155" width="155"
-                            style="margin:10px 10px 10px 10px;border-radius: 3px;"
+                            style="margin: 10px;border-radius: 3px;"
                         />
-                        <div class="m-20" >
+                        <div style="margin: 20px">
                             <router-link tag="div"  class="article-title" :to="{path:'article/details',query:{id:item.id}}" >
                                 <span style="overflow-wrap: break-word;">{{item.title}}</span>
                             </router-link>
-                            <div class="mt-10">
+                            <div style="margin-top: 10px">
                                 <span style="overflow-wrap: break-word;">{{item.summary}}</span>
                             </div>
-                            <div class="time mt-40 d-f">
+                            <div class="time" style="display: flex;margin-top: 80px">
                                 <div>
                                     <!-- <span class="el-icon-time"></span> -->
-                                    <span class="ml-5">{{item.createTime}}</span>
+                                    <span style="margin-left: 5px">{{item.createTime}}</span>
                                 </div>
-                                <div class="ml-20">
+                                <div style="margin-left: 20px">
                                     <!-- <span class="el-icon-view"></span> -->
-                                    <span class="ml-5">{{item.browse}} 已阅读</span>
+                                    <span style="margin-left: 5px">{{item.browse}} 已阅读</span>
                                 </div>
                             </div>
                         </div>

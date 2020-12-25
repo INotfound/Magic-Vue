@@ -1,22 +1,17 @@
 <template>
-    <div>
-        <div class="content-left" >
-            <div class="bg-white radius5 shadow">
-                <h3 class="pt-5 pb-5 ml-10" style="color: black; margin-top: 0px; margin-bottom: 0px;">所有文章</h3>
+    <div class="content">
+        <div class="center">
+            <div style="width:65%">
+                <div class="title">
+                    <h3>全部</h3>
+                </div>
+                <articlelist :articleInfo="articleListInfo" />
             </div>
-            <articlelist :articleInfo="articleListInfo" />
-            <el-pagination
-                class="d-cc mt-10"
-                background
-                layout="prev, pager, next"
-                :hide-on-single-page="true"
-                :total="100">
-            </el-pagination>
-        </div>
-        <div class="content-right">
-            <el-aside style="z-index: 999;">
-                <avatar />
-            </el-aside>
+            <div style="width:24%">
+                <div style="position: fixed;">
+                    <avatar />
+                </div>
+            </div>
         </div>
     </div>
 </template>

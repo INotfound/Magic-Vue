@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="content-left" >
-            <el-card class="left-top d-cf-column pl-20 pb-20">
+            <div class="d-cf-column pl-20 pb-20">
                 <div class="pb-10 l-b">
                     <h3>小白君</h3>
                     <div class="d-f" style="color:#748594">
@@ -17,7 +17,7 @@
                 </div>
                 <article v-html="html" ></article>
                 <!-- <mavon-editor></mavon-editor> -->
-            </el-card>
+            </div>
         </div>
         <div class="content-right">
             <el-aside style="z-index: 999; position: fixed;">
@@ -48,4 +48,14 @@ export default {
 </script>
 
 <style>
+.card{
+    transition: all 0.5s;
+    border-radius: 3px;
+    border: 1px rgb(0, 0, 0);
+    background-color:#FFFFFF;
+    box-shadow:0px 0px 4px rgba(0, 0, 0, 0.1);
+}
+.card:hover{
+    box-shadow:0px 0px 20px rgba(0, 0, 0, 0.15);
+}
 </style>
