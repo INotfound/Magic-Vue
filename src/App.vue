@@ -54,6 +54,7 @@ label.logo{
 }
 
 nav{
+  z-index:999;
   height: 60px;
   width: 100%;
   position: fixed;

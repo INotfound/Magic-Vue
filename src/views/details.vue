@@ -20,9 +20,10 @@
             </div>
         </div>
         <div class="content-right">
-            <el-aside style="z-index: 999; position: fixed;">
-                <sidebar />
-            </el-aside>
+            <sidebar />
+            <!-- <el-aside style="z-index: 999; position: fixed;">
+                
+            </el-aside> -->
         </div>
     </div>
 </template>

@@ -87,13 +87,15 @@ main{
 }
 
 
-@media (max-width: 760px){
+@media (max-width: 1205px){
     .sidebars{
         width: 0%;
         display: none;
     }
     .articles{
         width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
 

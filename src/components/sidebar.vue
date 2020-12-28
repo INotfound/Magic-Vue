@@ -2,7 +2,7 @@
     <div class="sidebar">
         <div class="avatar">
             <img class="img-avatar-background" src="../assets/about.jpg">
-            <div class="image" ><img class="img-avatar" src="../assets/avatar.jpg" alt ></div>
+            <div class="image-div" ><img class="img-avatar" src="../assets/avatar.jpg" alt ></div>
         </div>
     </div>
 </template>
@@ -28,7 +28,7 @@ export default {
     box-shadow:0px 0px 4px rgba(0, 0, 0, 0.15);
     background-color: white; 
 }
-.image{
+.image-div{
     display:flex;
     padding-bottom: 10px;
     justify-content: center;
