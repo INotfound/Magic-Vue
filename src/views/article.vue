@@ -9,7 +9,7 @@
             </div>
             <div style="width:24%">
                 <div style="position: fixed;">
-                    <avatar />
+                    <sidebar />
                 </div>
             </div>
         </div>
@@ -17,22 +17,22 @@
 </template>
 
 <script>
-import avatar from "../components/avatar.vue"
+import sidebar from "../components/sidebar.vue"
 import articlelist from "../components/articlelist.vue"
 export default {
     components:{
-        avatar,
+        sidebar,
         articlelist
     },
     data() {
         return {
             articleListInfo: [
-                {id:1,title:"小白君真帅",summary:"小白君是真的帅",createTime:"2020-3-31",browse:2400,imgUrl:"http://www.zbboke.com/uploads/allimg/180626/1-1P626192T9222-lp.png"},
-                {id:2,title:"小白君真帅",summary:"小白君是真的帅",createTime:"2020-3-31",browse:2400,imgUrl:"http://www.zbboke.com/uploads/allimg/180626/1-1P626192T9222-lp.png"},
-                {id:3,title:"小白君真帅",summary:"小白君是真的帅",createTime:"2020-3-31",browse:2400,imgUrl:"http://www.zbboke.com/uploads/allimg/180626/1-1P626192T9222-lp.png"},
-                {id:4,title:"小白君真帅",summary:"小白君是真的帅",createTime:"2020-3-31",browse:2400,imgUrl:"http://www.zbboke.com/uploads/allimg/180626/1-1P626192T9222-lp.png"},
-                {id:5,title:"小白君真帅",summary:"小白君是真的帅",createTime:"2020-3-31",browse:2400,imgUrl:"http://www.zbboke.com/uploads/allimg/180626/1-1P626192T9222-lp.png"},
-                {id:6,title:"小白君真帅",summary:"小白君是真的帅",createTime:"2020-3-31",browse:2400,imgUrl:"http://www.zbboke.com/uploads/allimg/180626/1-1P626192T9222-lp.png"}
+                {id:1,title:"小白君真帅",summary:"小白君是真的帅",createTime:"2020-3-31",browse:2400,imgUrl:"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3468384679,3521528174&fm=26&gp=0.jpg"},
+                {id:2,title:"小白君真帅",summary:"小白君是真的帅",createTime:"2020-3-31",browse:2400,imgUrl:"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3468384679,3521528174&fm=26&gp=0.jpg"},
+                {id:3,title:"小白君真帅",summary:"小白君是真的帅",createTime:"2020-3-31",browse:2400,imgUrl:"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3468384679,3521528174&fm=26&gp=0.jpg"},
+                {id:4,title:"小白君真帅",summary:"小白君是真的帅",createTime:"2020-3-31",browse:2400,imgUrl:"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3468384679,3521528174&fm=26&gp=0.jpg"},
+                {id:5,title:"小白君真帅",summary:"小白君是真的帅",createTime:"2020-3-31",browse:2400,imgUrl:"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3468384679,3521528174&fm=26&gp=0.jpg"},
+                {id:6,title:"小白君真帅",summary:"小白君是真的帅",createTime:"2020-3-31",browse:2400,imgUrl:"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3468384679,3521528174&fm=26&gp=0.jpg"}
             ],
         }
     },

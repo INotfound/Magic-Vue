@@ -4,7 +4,7 @@ import SparkMD5 from 'SparkMD5'
 import MavonEditor from 'MavonEditor'
 import App from './App.vue'
 import Routers from './routers.js'
-import '../public/index.css'
+// import '../public/index.css'
 
 Vue.use(MavonEditor)
 Vue.prototype.$Http = axios

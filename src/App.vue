@@ -1,136 +1,180 @@
 <template>
   <div id="app">
-    <nav class="box">
-      <div>
-        <ul>
-          <li>
-            <a>
-              <img loading="lazy" style="width: 45px; height: 45px;" src="./assets/logo.png"/>
-              <router-link to="/">小白君的Blog</router-link>
-            </a>
-          </li>
-        </ul>
-        <ul>
-          <li><a><router-link to="/">首页</router-link></a></li>
-          <li><a><router-link to="/article">文章</router-link></a></li>
-          <li v-if="isLogin"><a><router-link to="/console/editor">写文章</router-link></a></li>
-          <li><a><router-link to="/login">登录</router-link></a></li>
-        </ul>
-      </div>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars fa-1x"></i>
+      </label>
+      <label class="logo">XiaoBaiJun</label>
+      <ul>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">文章</a></li>
+        <li><a href="#">登录</a></li>
+        <li><a href="#">关于</a></li>
+      </ul>
     </nav>
+
     <div><router-view/></div>
   </div>
 </template>
 <script>
 export default {
     data(){
-        return {
-            isLogin: false,
-            activeIndex: "/",
-            loginData:{
-                userName:'',
-                userPasswd:''
-            }
+        return{
         }
     },
-    created() {
-      const token = localStorage.getItem("MTOKEN")
-      if(token){
-        this.isLogin = true
-      }else{
-        this.isLogin = false
-      }
+    created(){
     },
-    methods: {
-      onLogin() {
-        if(Object.keys(this.loginData.userName).length == 0){
-          this.$notify.error({
-            title: '错误',
-            message: '请输入账号!!!',
-            position: 'bottom-right'
-          });
-          return;
-        }else if(Object.keys(this.loginData.userPasswd).length == 0){
-          this.$notify.error({
-            title: '错误',
-            message: '请输入密码!!!',
-            position: 'bottom-right'
-          });
-          return;
-        }
-        this.loginData.userPasswd = this.$Md5.hash(this.loginData.userPasswd)
-        this.$Http({
-            url:'https://172.81.206.73/login',
-            method:'post',
-            data: this.loginData,
-        }).then(res=>{
-            console.log(res)
-            if(res.data.Code === 410){
-              this.$notify.error({
-                title: '错误',
-                message: '账号或密码错误!!!',
-                position: 'bottom-right'
-              });
-            }
-            if(res.data.Code === 200){
-              this.$notify.success({
-                title: '错误',
-                message: '账号或密码错误!!!',
-                position: 'bottom-right'
-              });
-              this.router.push('index')
-            }
-        })
-      }
+    methods:{
     }
 }
 </script>
 
 <style>
-  .box{
-    width: 100%;
-    height: 50px;
-    display: flex;
-    position: fixed;
-    align-items: center;
-    background: #4AB1EC;
-    justify-content: center;
-    box-shadow: 0 -2px 5px #000;
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: montserrat;
+  background: #F7F8FA;
+}
+
+
+label.logo{
+  color: white;
+  font-size: 35px;
+  line-height: 60px;
+  padding: 0 100px;
+  font-weight: bold;
+}
+
+nav{
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  background: #4AB1EC; 
+  box-shadow: 0 -2px 5px #000;
+}
+
+
+nav ul{
+  float: right;
+  margin-right: 20px;
+}
+
+nav ul li{
+  margin: 0 5px;
+  line-height: 60px;
+  display: inline-block;
+}
+
+nav ul li a{
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+a.active,a:hover{
+  background: #1b9bff;
+  transition: .5s;
+}
+
+.checkbtn{
+  float: right;
+  display: none;
+  color: white;
+  cursor: pointer;
+  font-size: 30px;
+  line-height: 60px;
+  margin-right: 40px;
+}
+#check{
+  display: none;
+}
+
+/* @media (max-width: 952px){
+
+  nav ul li a{
+    font-size: 16px;
   }
-  .box div{
-    width: 65%;
-    display: flex;
-    position: fixed;
-    align-items: center;
-    justify-content: space-between;
+} */
+
+@media (max-width: 760px){
+  .checkbtn{
+    display: block;
   }
-  .box ul{
-    display: flex;
-    list-style: none;
-    flex-direction: row;
-  }
-  .box ul li a{
-    display: flex;
-    color: #FFFFFF;
-    font-size: 18px;
-    line-height: 50px;
-    padding-left: 20px;
-    padding-right: 20px;
-    flex-direction: row;
-    text-decoration: none;
-  }
-  .box ul li:hover{
-    color:#FFFFFF;
-    background: #3B8EBD;
+  
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
   }
 
-  .pt-80{
-    padding-top: 80px;
+  nav ul{
+    width: 30%;
+    right: -100%;
+    height: 100vh;  
+    position: fixed;
+    margin-right: 0px;
+    text-align: center;
+    transition: all .5s;
+    background: #0082e6;
   }
-  .pl-280{
-    padding-left: 280px;
+  nav ul li{
+    display: block;
   }
-  .pr-280{
-    padding-right: 280px;
+  nav ul li a{
+    font-size: 20px;
   }
+  a:hover,a.active{
+    background: none;
+    color: #4AB1EC;
+  }
+  #check:checked ~ ul{
+    right: 0;
+  }
+}
+
+@media (max-width: 400px){
+  .checkbtn{
+    display: block;
+  }
+  
+  label.logo{
+    font-size: 24px;
+    padding-left: 25px;
+  }
+
+  nav ul{
+    width: 30%;
+    right: -100%;
+    height: 100vh;  
+    position: fixed;
+    margin-right: 0px;
+    text-align: center;
+    transition: all .5s;
+    background: #0082e6;
+  }
+  nav ul li{
+    display: block;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: #4AB1EC;
+  }
+  #check:checked ~ ul{
+    right: 0;
+  }
+}
+
+
 </style>

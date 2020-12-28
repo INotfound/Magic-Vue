@@ -21,17 +21,17 @@
         </div>
         <div class="content-right">
             <el-aside style="z-index: 999; position: fixed;">
-                <avatar />
+                <sidebar />
             </el-aside>
         </div>
     </div>
 </template>
 
 <script>
-import avatar from "../components/avatar.vue"
+import sidebar from "../components/sidebar.vue"
 export default {
     components:{
-        avatar,
+        sidebar,
     },
     data() {
         return {
