@@ -1,19 +1,20 @@
 <template>
   <div id="app">
     <nav>
-      <input type="checkbox" id="check">
-      <label for="check" class="checkbtn">
-        <i class="fas fa-bars fa-1x"></i>
-      </label>
-      <label class="logo">XiaoBaiJun</label>
-      <ul>
-        <li><a href="#">首页</a></li>
-        <li><a href="#">文章</a></li>
-        <li><a href="#">登录</a></li>
-        <li><a href="#">关于</a></li>
-      </ul>
-    </nav>
+      <div>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars fa-1x"></i>
+        </label>
+        <label class="logo">XiaoBaiJun</label>
+        <ul>
+          <li><a href="#">首页</a></li>
+          <li><a href="#">文章</a></li>
+          <li><a href="#">登录</a></li>
 
+        </ul>
+      </div>
+    </nav>
     <div><router-view/></div>
   </div>
 </template>
@@ -62,28 +63,33 @@ nav{
   box-shadow: 0 -2px 5px #000;
 }
 
-
-nav ul{
-  float: right;
-  margin-right: 20px;
+nav div{
+  width: 78%;
+  color: #000;
+  margin: 0 auto;
 }
 
-nav ul li{
+nav div ul{
+  float: right;
+  margin-right: 80px;
+}
+
+nav div ul li{
   margin: 0 5px;
   line-height: 60px;
   display: inline-block;
 }
 
-nav ul li a{
+nav div ul li a{
   color: white;
   font-size: 18px;
-  padding: 10px 20px;
+  padding: 20px 20px;
   border-radius: 3px;
   text-transform: uppercase;
 }
 
 a.active,a:hover{
-  background: #1b9bff;
+  background: #ffffff2f;
   transition: .5s;
 }
 

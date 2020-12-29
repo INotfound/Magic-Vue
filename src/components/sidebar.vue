@@ -37,10 +37,15 @@ export default {
 .img-avatar{
     width: 90px;
     height: 90px;
-    border-radius :50%;
     margin-top: -15%;
+    border-radius :50%;
+    transition: all 0.5s;
     vertical-align: middle;
     border: rgba(255,255,255,.4) 4px solid;
+}
+
+.img-avatar:hover{
+    transform: rotate(360deg);
 }
 
 .img-avatar-background{

@@ -7,6 +7,7 @@
                 class="card-image"
             />
             <div>
+                <span style="overflow-wrap: break-word;">{{item.title}}</span>
                 <!-- <div style="margin: 20px">
                     <router-link tag="div"  class="article-title" :to="{path:'article/details',query:{id:item.id}}" >
                         <span style="overflow-wrap: break-word;">{{item.title}}</span>
@@ -41,13 +42,16 @@ export default {
 
 .card{
     height: 200px;
+    display: flex;
     margin-top: 10px;
     border-radius: 10px;
     transition: all 0.5s;
     border: 1px rgb(0, 0, 0);
     background-color:#FFFFFF;
+    justify-content:flex-start;
     box-shadow:0px 0px 4px rgba(0, 0, 0, 0.1);
 }
+
 .card:hover{
     box-shadow:0px 0px 20px rgba(0, 0, 0, 0.15);
     transform:scale(1.05);
@@ -62,6 +66,9 @@ export default {
 }
 
 @media (max-width: 772px){
+    .card{
+        height: 35%;        
+    }
     .card .card-image{
         width: 35%;
         height: 35%;
