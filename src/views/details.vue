@@ -1,5 +1,18 @@
 <template>
-    <div>
+    <div class="content">
+        <main>
+            <div>
+                <div class="articles">
+                    <article v-html="html"></article>
+                    <!-- <mavon-editor></mavon-editor> -->
+                </div>
+                <div class="sidebars">
+                    <sidebar />
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- <div>
         <div class="content-left" >
             <div class="d-cf-column pl-20 pb-20">
                 <div class="pb-10 l-b">
@@ -16,16 +29,14 @@
                     </div>
                 </div>
                 <article v-html="html" ></article>
-                <!-- <mavon-editor></mavon-editor> -->
+                <mavon-editor></mavon-editor>
             </div>
         </div>
         <div class="content-right">
             <sidebar />
-            <!-- <el-aside style="z-index: 999; position: fixed;">
-                
-            </el-aside> -->
+
         </div>
-    </div>
+    </div> -->
 </template>
 
 <script>
@@ -40,7 +51,14 @@ export default {
         }
     },
     created() {
-        this.html = this.$MarkDown.render('# 小白君真的很帅!');
+        this.html = this.$MarkDown.render("# 小白君真的很帅! \
+        \n\n\
+```c++ \n\
+int main()\n\
+{\n\
+    printf(\"hello world!\");\n\
+}\n\
+```");
         console.log(this.html)
     },
     methods:{
@@ -49,14 +67,26 @@ export default {
 </script>
 
 <style>
-.card{
-    transition: all 0.5s;
-    border-radius: 3px;
-    border: 1px rgb(0, 0, 0);
-    background-color:#FFFFFF;
-    box-shadow:0px 0px 4px rgba(0, 0, 0, 0.1);
+main{
+    width: 1240px;
+    margin: auto auto 60px;
 }
-.card:hover{
-    box-shadow:0px 0px 20px rgba(0, 0, 0, 0.15);
+
+.content{
+    display: flex;
+    padding-top: 80px;
+    justify-content: center;
 }
+
+.articles{
+    float: left;
+    width: 900px;
+}
+
+.sidebars{
+    float: right;
+    width: 300px;
+    display: block;
+}
+
 </style>

@@ -8,9 +8,9 @@
         </label>
         <label class="logo">XiaoBaiJun</label>
         <ul>
-          <li><a href="#">首页</a></li>
-          <li><a href="#">文章</a></li>
-          <li><a href="#">登录</a></li>
+          <li><router-link to="/">首页</router-link></li>
+          <li><router-link to="/article">文章</router-link></li>
+          <li><router-link to="/console/editor">发表</router-link></li>
         </ul>
       </div>
     </nav>
@@ -40,7 +40,7 @@ export default {
 }
 
 body{
-  font-family: montserrat;
+  font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
   background: #F7F8FA;
 }
 
@@ -50,10 +50,16 @@ label.logo{
   font-size: 35px;
   line-height: 60px;
   font-weight: bold;
+  transition: all 0.5s;
+}
+
+label.logo:hover{
+  font-size: 50px;
+  text-shadow:0px 10px 1.5px rgba(255, 255, 255, 0.5)
 }
 
 nav{
-  z-index:999;
+  z-index:9999999;
   height: 60px;
   width: 100%;
   position: fixed;
@@ -62,7 +68,7 @@ nav{
 }
 
 nav div{
-  width: 1240px;
+  width: 1280px;
   margin: 0 auto;
 }
 

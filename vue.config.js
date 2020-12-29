@@ -6,7 +6,8 @@ module.exports = {
       'axios':'axios',
       "SparkMD5": "SparkMD5",
       "element-ui": "ELEMENT",
-      "MavonEditor": "MavonEditor"
+      "MavonEditor": "MavonEditor",
+      "Highlight": "Highlight"
     }
   }
 }
