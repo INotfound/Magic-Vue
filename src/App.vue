@@ -11,7 +11,6 @@
           <li><a href="#">首页</a></li>
           <li><a href="#">文章</a></li>
           <li><a href="#">登录</a></li>
-
         </ul>
       </div>
     </nav>
@@ -50,7 +49,6 @@ label.logo{
   color: white;
   font-size: 35px;
   line-height: 60px;
-  padding: 0 100px;
   font-weight: bold;
 }
 
@@ -64,14 +62,12 @@ nav{
 }
 
 nav div{
-  width: 78%;
-  color: #000;
+  width: 1240px;
   margin: 0 auto;
 }
 
 nav div ul{
   float: right;
-  margin-right: 80px;
 }
 
 nav div ul li{
@@ -100,7 +96,7 @@ a.active,a:hover{
   cursor: pointer;
   font-size: 30px;
   line-height: 60px;
-  margin-right: 40px;
+  margin-right: 20px;
 }
 #check{
   display: none;
@@ -113,7 +109,13 @@ a.active,a:hover{
   }
 } */
 
-@media (max-width: 760px){
+@media (max-width: 1245px){
+  nav div{
+    width: 100%;
+  }
+}
+
+@media (max-width: 1205px){
   .checkbtn{
     display: block;
   }
@@ -123,63 +125,50 @@ a.active,a:hover{
     padding-left: 50px;
   }
 
-  nav ul{
+  nav div{
+    width: 100%;
+  }
+
+  nav div ul{
     width: 30%;
     right: -100%;
     height: 100vh;  
     position: fixed;
-    margin-right: 0px;
     text-align: center;
     transition: all .5s;
     background: #0082e6;
   }
-  nav ul li{
+  
+  nav div ul li{
     display: block;
   }
-  nav ul li a{
+  
+  nav div ul li a{
     font-size: 20px;
   }
+  
   a:hover,a.active{
     background: none;
     color: #4AB1EC;
   }
+  
   #check:checked ~ ul{
     right: 0;
   }
 }
 
 @media (max-width: 400px){
-  .checkbtn{
-    display: block;
-  }
-  
   label.logo{
     font-size: 24px;
     padding-left: 25px;
   }
 
-  nav ul{
-    width: 30%;
-    right: -100%;
-    height: 100vh;  
-    position: fixed;
+  nav div ul{
     margin-right: 0px;
-    text-align: center;
-    transition: all .5s;
-    background: #0082e6;
   }
-  nav ul li{
+  
+  nav div ul li{
     display: block;
-  }
-  nav ul li a{
-    font-size: 20px;
-  }
-  a:hover,a.active{
-    background: none;
-    color: #4AB1EC;
-  }
-  #check:checked ~ ul{
-    right: 0;
   }
 }
 
