@@ -5,9 +5,7 @@ module.exports = {
       "vue": "Vue",
       'axios':'axios',
       "SparkMD5": "SparkMD5",
-      "element-ui": "ELEMENT",
       "MavonEditor": "MavonEditor",
-      "Highlight": "Highlight"
     }
   }
 }

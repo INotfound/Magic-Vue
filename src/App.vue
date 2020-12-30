@@ -4,7 +4,7 @@
       <div>
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
-          <i class="fas fa-bars fa-1x"></i>
+          <i class="iconfont icon-iconmore"></i>
         </label>
         <label class="logo">XiaoBaiJun</label>
         <ul>
@@ -101,7 +101,7 @@ a.active,a:hover{
   color: white;
   cursor: pointer;
   font-size: 30px;
-  line-height: 60px;
+  line-height: 50px;
   margin-right: 20px;
 }
 #check{

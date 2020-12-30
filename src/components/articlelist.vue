@@ -22,30 +22,15 @@
                         <!-- 日期阅读量 -->
                     <div class="article-reading">
                         <div>
-                            <span style="margin-left: 5px">{{item.createTime}}</span>
+                            <i class="iconfont icon-bilibili-line"/>
+                            <span style="margin-left: 3px;font-size:15px;">{{item.browse}} 次围观</span>
                         </div>
                         <div style="margin-left: 20px">
-                            <span style="margin-left: 5px">{{item.browse}} 已阅读</span>
+                            <i class="iconfont icon-riqi"/>
+                            <span style="margin-left: 3px;font-size:15px;">日期 {{item.createTime}}</span>
                         </div>
                     </div>
                 </div>
-
-                <!-- <div style="margin: 20px">
-                    <router-link tag="div"  class="article-title" :to="{path:'article/details',query:{id:item.id}}" >
-                        <span style="overflow-wrap: break-word;">{{item.title}}</span>
-                    </router-link>
-                    <div style="margin-top: 10px">
-                        <span style="overflow-wrap: break-word;">{{item.summary}}</span>
-                    </div>
-                    <div class="time" style="display: flex;margin-top: 80px">
-                        <div>
-                            <span style="margin-left: 5px">{{item.createTime}}</span>
-                        </div>
-                        <div style="margin-left: 20px">
-                            <span style="margin-left: 5px">{{item.browse}} 已阅读</span>
-                        </div>
-                    </div>
-                </div> -->
             </div>
 
         </div>
