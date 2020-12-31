@@ -9,8 +9,8 @@
         <label class="logo">XiaoBaiJun</label>
         <ul>
           <li><router-link to="/">首页</router-link></li>
-          <li><router-link to="/article">文章</router-link></li>
           <li><router-link to="/console/editor">发表</router-link></li>
+          <li><router-link to="/">登录</router-link></li>
         </ul>
       </div>
     </nav>

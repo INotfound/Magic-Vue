@@ -3,7 +3,6 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const index = () => import('./views/index.vue');
-const article = ()=> import('./views/article.vue');
 const details = ()=> import('./views/details.vue');
 const editor = ()=> import('./views/editor.vue')
 const routes = [
@@ -11,11 +10,6 @@ const routes = [
     path: '/',
     name: 'index',
     component: index
-  },
-  {
-    path: '/article',
-    name: 'article',
-    component: article
   },
   {
     path: '/article/details',

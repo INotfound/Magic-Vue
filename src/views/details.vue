@@ -93,8 +93,8 @@ main{
     }
     .articles{
         width: 100%;
-        padding-left: 40px;
-        padding-right: 40px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
 </style>

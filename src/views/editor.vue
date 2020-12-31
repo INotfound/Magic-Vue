@@ -1,12 +1,19 @@
 <template>
     <div class="content">
         <main>
-            <div>
+            <div style="display: flex;margin-bottom: 10px;">
+                <div class="edit">
+                    <i class="iconfont icon-biaotizhishi"/>
+                    <input type="text" placeholder="请输入标题" v-text="title" />
+                </div>
             </div>
-            <div>
+            <div style="margin-bottom: 10px;">
                 <mavon-editor :toolbars="toolbars" :tabSize="4" :codeStyle="atom-one-dark" v-model="content" style="height: 650px;"></mavon-editor>
             </div>
-            <button class="btn-commit" type="button" @click="commit">Click Me!</button>
+            <div style="display: flex;justify-content: flex-end;">
+                <button class="btn" type="button" @click="commit">发表</button>
+            </div>
+            
         </main>
     </div>
 </template>
@@ -69,7 +76,6 @@ export default {
 </script>
 
 <style>
-
 .content{
     height: 100%;
     display: flex;
@@ -79,11 +85,79 @@ export default {
 
 .content main{
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
-.content main .btn-commit{
-    margin-top: 50px;
+.edit{
+    width: 100%;
+    height: 24px;
+    display: flex;
+    border-radius: 5px;
+    align-items:center;
+    justify-content: center;
+    border: 1px solid rgb(155, 155, 155);
 }
 
+.edit i{
+    width: 5px;
+    height: initial;
+    margin-left: 2px;
+    color: #5F5F5F9A;
+}
+
+.edit input{
+    width: 100%;
+    border: none;
+    outline: none;
+    height: initial;
+    margin-left: 15px;
+    background: transparent;
+}
+
+.btn{
+    width: 120px;
+    height: 55px;
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    background: none;
+    color: #3498DB;
+    border: 2.5px solid;
+    position: relative;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+.btn::before,.btn::after{
+    content: "";
+    height: 4px;
+    width: 14px;
+    position: absolute;
+    background: #F7F8FA;
+    transition: .095s linear;
+    transform: skewX(50deg);
+}
+
+.btn::before{
+    top: -4px;
+    left: 10%;
+}
+
+.btn::after{
+    right: 10%;
+    bottom: -4px;
+}
+
+.btn:active{
+    transform:scale(0.98);
+}
+
+.btn:active::before{
+    left: 80%;
+}
+
+.btn:active::after{
+    right: 80%;
+}
 </style>
