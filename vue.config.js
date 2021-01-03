@@ -1,4 +1,5 @@
 module.exports = {
+  publicPath: './',
   configureWebpack: {
     // 配置使用CDN
     externals: {
