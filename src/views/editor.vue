@@ -4,7 +4,7 @@
             <div style="display: flex;margin-bottom: 10px;">
                 <div class="edit">
                     <i class="iconfont icon-biaotizhishi"/>
-                    <input type="text" placeholder="请输入标题" v-text="title" />
+                    <input type="text" placeholder="请输入标题" v-model="title" />
                 </div>
             </div>
             <div style="margin-bottom: 10px;">
@@ -61,15 +61,36 @@ export default {
     },
     methods:{
         commit(){
+            console.log(this.title);
+            console.log(this.content);
+            if(this.title === "" || this.content === ""){
+                alert("请输入标题或正文!");
+                return;
+            }
             // 标题 简要 正文 图片
-            var abort = this.$MarkDown.parse(this.content,[])[1].content;
-            abort = abort.replace(/&emsp;/g,"  ");
-            abort = abort.replace(/&nbsp;/g,"  ");
-            abort = abort.replace(/&ensp;/g,"  ");
-            abort = abort.replace(/&#8194;/g,"  ");
-            abort = abort.replace(/&#8195;/g,"  ");
-            abort = abort.replace(/&#160;/g,"  ");
-            console.log(abort)
+            var about = this.$MarkDown.parse(this.content,[])[1].content;
+            about = about.replace(/&emsp;/g,"  ");
+            about = about.replace(/&nbsp;/g,"  ");
+            about = about.replace(/&ensp;/g,"  ");
+            about = about.replace(/&#8194;/g,"  ");
+            about = about.replace(/&#8195;/g,"  ");
+            about = about.replace(/&#160;/g,"  ");
+            console.log(about)
+
+            var that = this;
+            this.$Http.post('/commitEditor',{
+                Title:that.title,
+                About:about,
+                Content:that.content
+            }).then(function(response){
+                if(response.data.Code === 1){
+                    alert("提交成功!");
+                }else{
+                    alert("提交失败!");
+                }
+            }).catch(function(error){
+                console.log(error);
+            });
         }
     }
 }

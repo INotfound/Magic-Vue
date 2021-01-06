@@ -3,11 +3,11 @@
         <main>
             <div>
                 <div class="articles">
-                    <h1 style="margin-left: 25px;font-size: 24px;color: #555;">小白太帅了</h1>
+                    <h1 style="margin-left: 25px;font-size: 24px;color: #555;">{{title}}</h1>
                     <div class="articles-reading">
                         <div>
                             <i class="iconfont icon-bilibili-line"/>
-                            <span style="margin-left: 3px;font-size:15px;">{{browse}} 次围观</span>
+                            <span style="margin-left: 3px;font-size:15px;">{{views}} 次围观</span>
                         </div>
                         <div  style="margin-left: 20px">
                             <i class="iconfont icon-riqi"/>
@@ -34,12 +34,30 @@ export default {
     data() {
         return {
             html:"",
-            browse:"0",
-            createTime:"2020-11-13"
+            title:"",
+            views:"",
+            createTime:""
         }
     },
     created() {
-        this.html = this.$MarkDown.render("# 小白君真的很帅!\n\n```c++ \nint main(){\n    printf(\"hello world!\");\n}\n```\n\n# 小白君真的很帅!\n\n# 小白君真的很帅!\n\n# 小白君真的很帅!\n\n# 小白君真的很帅!\n\n# 小白君真的很帅!\n\n# 小白君真的很帅!\n\n");
+        console.log(this.$route.query)
+        var that = this
+        this.$Http.get('/getDetails',{
+            params: {
+                Id: this.$route.query.Id
+            }
+        }).then(function(response){
+            console.log(response.data);
+            if(response.data.Code == 0)
+                return;
+            that.title = response.data.Title;
+            that.views = response.data.Views;
+            that.createTime = response.data.CreateTime;
+            that.html = that.$MarkDown.render(response.data.Content);
+        }).catch(function(error){
+            console.log(error);
+        });
+        
         // console.log(this.$MarkDown.parseInline("# 小白君真的很帅!  \n\n\n# 你好呀",[])[0])
         // console.log(this.$MarkDown.parseInline("# 小白君真的很帅!  \n\n\n# 你好呀",[])[1].content)
     },

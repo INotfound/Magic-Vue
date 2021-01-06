@@ -3,31 +3,31 @@
         <div class="card" v-for="(item,i) in articleInfo"  :key="i">
             <router-link tag="img"
                 alt
-                :src="item.imgUrl"  
+                src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3468384679,3521528174&fm=26&gp=0.jpg"
                 class="card-image"
-                :to="{path:'article/details',query:{id:item.id}}"
+                :to="{path:'article/details',query:{Id:item.Id}}"
             />
             <div>
                 <div class="article-about">
                     <div>
                         <!-- 标题 -->
-                        <router-link tag="div"  class="article-title" :to="{path:'article/details',query:{id:item.id}}" >
-                            <span style="overflow-wrap: break-word;">{{item.title}}</span>
+                        <router-link tag="div"  class="article-title" :to="{path:'article/details',query:{Id:item.Id}}" >
+                            <span style="overflow-wrap: break-word;">{{item.Title}}</span>
                         </router-link>
                         <!-- 详情 -->
-                        <router-link tag="div" style="margin-top: 10px;cursor: pointer;" :to="{path:'article/details',query:{id:item.id}}">
-                            <span style="overflow-wrap: break-word;">{{item.summary}}</span>    
+                        <router-link tag="div" style="margin-top: 10px;cursor: pointer;" :to="{path:'article/details',query:{Id:item.Id}}">
+                            <span style="overflow-wrap: break-word;">{{item.About}}</span>    
                         </router-link>
                     </div>
                         <!-- 日期阅读量 -->
                     <div class="article-reading">
                         <div>
                             <i class="iconfont icon-bilibili-line"/>
-                            <span style="margin-left: 3px;font-size:15px;">{{item.browse}} 次围观</span>
+                            <span style="margin-left: 3px;font-size:15px;">{{item.Views}} 次围观</span>
                         </div>
                         <div style="margin-left: 20px">
                             <i class="iconfont icon-riqi"/>
-                            <span style="margin-left: 3px;font-size:15px;">日期 {{item.createTime}}</span>
+                            <span style="margin-left: 3px;font-size:15px;">日期 {{item.CreateTime}}</span>
                         </div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
 export default {
     props:{
         articleInfo: Array
-    },
+    }
 }
 </script>
 
