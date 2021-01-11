@@ -75,8 +75,12 @@ export default {
             about = about.replace(/&#8194;/g,"  ");
             about = about.replace(/&#8195;/g,"  ");
             about = about.replace(/&#160;/g,"  ");
+            about = about.replace(/&lt;/g,"<");
+            about = about.replace(/&gt;/g,">");
+
             console.log(about)
 
+            this.router.go(-1);
             var that = this;
             this.$Http.post('/commitEditor',{
                 Title:that.title,
@@ -105,6 +109,8 @@ export default {
 }
 
 .content main{
+    width: 1240px;
+    margin: auto auto 60px;
     flex-direction: column;
     justify-content: space-between;
 }

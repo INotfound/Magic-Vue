@@ -3,8 +3,8 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const index = () => import('./views/index.vue');
-const details = ()=> import('./views/details.vue');
-const editor = ()=> import('./views/editor.vue')
+const editor = () => import('./views/editor.vue')
+const details = () => import('./views/details.vue');
 const routes = [
   {
     path: '/',
