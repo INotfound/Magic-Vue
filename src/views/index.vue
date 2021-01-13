@@ -7,6 +7,7 @@
                         <h3>最新发布</h3>
                     </div>
                     <articlelist :articleInfo="articleListInfo" />
+
                 </div>
                 <div class="sidebars">
                     <sidebar />
@@ -22,25 +23,44 @@ import articlelist from "../components/articlelist.vue"
 export default {
     components:{
         sidebar,
-        articlelist,
+        articlelist
     },
     data() {
         return {
-            articleListInfo:[]
+            page: 1,
+            articleListInfo:[{"Id":93564,"Title":"asdasd","About":"![B99.jpg](1)","Views":0,"CreateTime":"2021-01-13"},{"Id":93563,"Title":"asdasd","About":"![B99.jpg](1)","Views":0,"CreateTime":"2021-01-13"},{"Id":93562,"Title":"编写测试","About":"收藏","Views":0,"CreateTime":"2021-01-12"},{"Id":93561,"Title":"asdasd","About":"&lt;/xml&gt;","Views":0,"CreateTime":"2021-01-11"},{"Id":93560,"Title":"耗油根","About":"&lt;/xml&gt;","Views":0,"CreateTime":"2021-01-09"},{"Id":93559,"Title":"1111","About":"1123123123","Views":0,"CreateTime":"2021-01-09"}]
         }
     },
     created() {
         console.log("小白君真帅")
         this.getArticleList();
     },
-
+    mounted() {
+        var that = this
+        window.onscroll = function(){
+            //变量scrollTop是滚动条滚动时，距离顶部的距离
+            var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+            //变量windowHeight是可视区的高度
+            var windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+            //变量scrollHeight是滚动条的总高度
+            var scrollHeight = document.documentElement.scrollHeight||document.body.scrollHeight;
+                //滚动条到底部的条件
+            if(scrollTop+windowHeight==scrollHeight){
+                that.page++;
+                that.getArticleList()
+            }
+        }
+    },
     methods:{
         getArticleList(){
             var that = this
-            this.$Http.get('/getArticleList')
-            .then(function (response) {
+            this.$Http.get('/getArticleList',{
+                params: {
+                    Page: that.page
+                    }
+            }).then(function (response) {
                 console.log(response.data.Obj);
-                that.articleListInfo = response.data.Obj;
+                that.articleListInfo = that.articleListInfo.concat(that.articleListInfo);
             })
             .catch(function (error) {
                 console.log(error);
