@@ -28,14 +28,14 @@ export default {
     data() {
         return {
             page: 1,
-            articleListInfo:[{"Id":1,"Title":"欢迎来到小白君的博客网站!","About":"这是一篇测试文章","Views":0,"CreateTime":"2021-01-18"},{"Id":1,"Title":"欢迎来到小白君的博客网站!","About":"这是一篇测试文章","Views":0,"CreateTime":"2021-01-18"}]
+            articleListInfo:[{"Id":1,"Title":"欢迎来到小白君的博客网站!","About":"这是一篇测试文章","Views":0,"CreateTime":"2021-01-18"},{"Id":1,"Title":"欢迎来到小白君的博客网站!","About":"这是一篇测试文章","Views":0,"CreateTime":"2021-01-18"},{"Id":1,"Title":"欢迎来到小白君的博客网站!","About":"这是一篇测试文章","Views":0,"CreateTime":"2021-01-18"},{"Id":1,"Title":"欢迎来到小白君的博客网站!","About":"这是一篇测试文章","Views":0,"CreateTime":"2021-01-18"},{"Id":1,"Title":"欢迎来到小白君的博客网站!","About":"这是一篇测试文章","Views":0,"CreateTime":"2021-01-18"},{"Id":1,"Title":"欢迎来到小白君的博客网站!","About":"这是一篇测试文章","Views":0,"CreateTime":"2021-01-18"}]
         }
     },
     created() {
         console.log("小白君真帅")
         this.getArticleList();
     },
-    mounted() {
+    activated() {
         var that = this
         window.onscroll = function(){
             //变量scrollTop是滚动条滚动时，距离顶部的距离
@@ -50,6 +50,9 @@ export default {
                 that.getArticleList()
             }
         }
+    },
+    deactivated() {
+        window.onscroll = function(){}
     },
     methods:{
         getArticleList(){

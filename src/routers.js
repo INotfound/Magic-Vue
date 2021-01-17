@@ -9,7 +9,8 @@ const routes = [
   {
     path: '/',
     name: 'index',
-    component: index
+    component: index,
+    meta:{keepAlive:true}
   },
   {
     path: '/article/details',
