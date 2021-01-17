@@ -16,7 +16,7 @@
                         </router-link>
                         <!-- 详情 -->
                         <router-link tag="div" style="margin-top: 10px;cursor: pointer;" :to="{path:'article/details',query:{Id:item.Id}}">
-                            <span style="overflow-wrap: break-word;">{{item.About}}</span>    
+                            <span style="overflow-wrap: break-word;color: rgba(255, 255, 255, 0.6);">{{item.About}}</span>    
                         </router-link>
                     </div>
                         <!-- 日期阅读量 -->
@@ -54,7 +54,7 @@ export default {
     border-radius: 10px;
     transition: all 0.5s;
     border: 1px rgb(0, 0, 0);
-    background-color:#FFFFFF;
+    background-color:rgba(255, 255, 255, 0.300);
     justify-content:flex-start;
     box-shadow:0px 0px 4px rgba(0, 0, 0, 0.1);
 }
@@ -82,7 +82,7 @@ export default {
 }
 
 .article-title {
-    color: #555;
+    color: rgba(255, 255, 255, 0.65);
     font-size: 20px;
     cursor: pointer;
     font-weight: bold;

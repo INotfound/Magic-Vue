@@ -28,7 +28,7 @@ export default {
     data() {
         return {
             page: 1,
-            articleListInfo:[{"Id":93564,"Title":"asdasd","About":"![B99.jpg](1)","Views":0,"CreateTime":"2021-01-13"},{"Id":93563,"Title":"asdasd","About":"![B99.jpg](1)","Views":0,"CreateTime":"2021-01-13"},{"Id":93562,"Title":"编写测试","About":"收藏","Views":0,"CreateTime":"2021-01-12"},{"Id":93561,"Title":"asdasd","About":"&lt;/xml&gt;","Views":0,"CreateTime":"2021-01-11"},{"Id":93560,"Title":"耗油根","About":"&lt;/xml&gt;","Views":0,"CreateTime":"2021-01-09"},{"Id":93559,"Title":"1111","About":"1123123123","Views":0,"CreateTime":"2021-01-09"}]
+            articleListInfo:[{"Id":1,"Title":"欢迎来到小白君的博客网站!","About":"这是一篇测试文章","Views":0,"CreateTime":"2021-01-18"},{"Id":1,"Title":"欢迎来到小白君的博客网站!","About":"这是一篇测试文章","Views":0,"CreateTime":"2021-01-18"}]
         }
     },
     created() {
@@ -60,7 +60,7 @@ export default {
                     }
             }).then(function (response) {
                 console.log(response.data.Obj);
-                that.articleListInfo = that.articleListInfo.concat(that.articleListInfo);
+                that.articleListInfo = that.articleListInfo.concat(response.data.Obj);
             })
             .catch(function (error) {
                 console.log(error);
@@ -96,7 +96,7 @@ main{
 
 .title{
     border-radius: 5px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.300);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 .title h3{
@@ -106,7 +106,7 @@ main{
     margin-left: 10px;
     margin-bottom: 0px;
     padding-bottom:5px;
-    color: rgb(92, 88, 88);
+    color: #FFFFFF
 }
 
 

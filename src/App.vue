@@ -41,7 +41,7 @@ export default {
 
 body{
   font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
-  background: #F7F8FA;
+  background-image: linear-gradient(to right,#fbc2eb,#a6c1ee);
 }
 
 
@@ -63,7 +63,7 @@ nav{
   height: 60px;
   width: 100%;
   position: fixed;
-  background: #4AB1EC; 
+  background-image: linear-gradient(to right,#fbc2eb,#a6c1ee);
   box-shadow: 0 -2px 5px #000;
 }
 

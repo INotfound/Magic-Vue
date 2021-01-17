@@ -80,7 +80,6 @@ export default {
 
             console.log(about)
 
-            this.router.go(-1);
             var that = this;
             this.$Http.post('/commitEditor',{
                 Title:that.title,
