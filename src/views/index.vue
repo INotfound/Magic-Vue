@@ -2,7 +2,7 @@
     <div class="content">
         <main>
             <div>
-                <div class="articles">
+                <div class="articlelist">
                     <div class="title">
                         <h3>最新发布</h3>
                     </div>
@@ -83,7 +83,7 @@ main{
     justify-content: center;
 }
 
-.articles{
+.articlelist{
     float: left;
     width: 900px;
 }
@@ -115,7 +115,7 @@ main{
         width: 0%;
         display: none;
     }
-    .articles{
+    .articlelist{
         width: 100%;
         padding-left: 10px;
         padding-right: 10px;
