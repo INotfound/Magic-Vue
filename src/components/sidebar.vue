@@ -34,7 +34,7 @@ export default{
 .avatar{
     border-radius: 10px;
     box-shadow:0px 0px 4px rgba(0, 0, 0, 0.15);
-    background-color: rgba(255, 255, 255, 0.800);
+    background-color: rgba(255, 255, 255, 0.600);
 }
 .image-div{
     display:flex;
