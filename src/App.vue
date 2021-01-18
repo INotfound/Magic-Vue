@@ -14,7 +14,7 @@
         </ul>
       </div>
     </nav>
-    <div><keep-alive><router-view/></keep-alive></div>
+    <div><router-view/></div>
   </div>
 </template>
 <script>

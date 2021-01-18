@@ -1,20 +1,22 @@
 <template>
-    <div class="content">
-        <main>
-            <div>
-                <div class="articlelist">
-                    <div class="title">
-                        <h3>最新发布</h3>
-                    </div>
-                    <articlelist :articleInfo="articleListInfo" />
+    <keep-alive>
+        <div class="content">
+            <main>
+                <div>
+                    <div class="articlelist">
+                        <div class="title">
+                            <h3>最新发布</h3>
+                        </div>
+                        <articlelist :articleInfo="articleListInfo" />
 
+                    </div>
+                    <div class="sidebars">
+                        <sidebar />
+                    </div>
                 </div>
-                <div class="sidebars">
-                    <sidebar />
-                </div>
-            </div>
-        </main>
-    </div>
+            </main>
+        </div>
+    </keep-alive>
 </template>
 
 <script>
@@ -28,7 +30,7 @@ export default {
     data() {
         return {
             page: 1,
-            articleListInfo:[{"Id":1,"Title":"欢迎来到小白君的博客网站!","About":"这是一篇测试文章","Views":0,"CreateTime":"2021-01-18"},{"Id":1,"Title":"欢迎来到小白君的博客网站!","About":"这是一篇测试文章","Views":0,"CreateTime":"2021-01-18"},{"Id":1,"Title":"欢迎来到小白君的博客网站!","About":"这是一篇测试文章","Views":0,"CreateTime":"2021-01-18"},{"Id":1,"Title":"欢迎来到小白君的博客网站!","About":"这是一篇测试文章","Views":0,"CreateTime":"2021-01-18"},{"Id":1,"Title":"欢迎来到小白君的博客网站!","About":"这是一篇测试文章","Views":0,"CreateTime":"2021-01-18"},{"Id":1,"Title":"欢迎来到小白君的博客网站!","About":"这是一篇测试文章","Views":0,"CreateTime":"2021-01-18"}]
+            articleListInfo:[]
         }
     },
     created() {

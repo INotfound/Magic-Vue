@@ -3,7 +3,7 @@
         <main>
             <div>
                 <div class="articles">
-                    <h1 style="margin-left: 25px;font-size: 24px;color: #555;">{{title}}</h1>
+                    <h1 style="margin-top: 20px;margin-left: 25px;font-size: 24px;color: #FFFFFF95;">{{title}}</h1>
                     <div class="articles-reading">
                         <div>
                             <i class="iconfont icon-bilibili-line"/>
@@ -15,7 +15,7 @@
                         </div>
 
                     </div>
-                    <article v-html="html"></article>
+                    <article style="color: #FFFFFF90;" v-html="html"></article>
                 </div>
                 <div class="sidebars">
                     <sidebar />
@@ -40,7 +40,7 @@ export default {
         }
     },
     created() {
-        console.log(this.$route.query)
+
         var that = this
         this.$Http.get('/getDetails',{
             params: {
