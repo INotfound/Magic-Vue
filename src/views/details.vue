@@ -104,6 +104,10 @@ main{
     display: block;
 }
 
+.hljs {
+    background: transparent;
+}
+
 @media (max-width: 1205px){
     .sidebars{
         width: 0%;

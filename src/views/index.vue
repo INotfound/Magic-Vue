@@ -30,7 +30,7 @@ export default {
     data() {
         return {
             page: 1,
-            articleListInfo:[{"Id":2,"Title":"关于博客项目地址.","About":"嘻嘻,本博客托管在Github上嗷.213123111111111111111111111111111111111111111111111111asdasdasdasdasdasdasd11111111111111111111111","Views":0,"CreateTime":"2021-01-18"},{"Id":1,"Title":"欢迎来到小白君的博客网站!","About":"这是一篇测试文章","Views":0,"CreateTime":"2021-01-18"}]
+            articleListInfo:[]
         }
     },
     created() {
