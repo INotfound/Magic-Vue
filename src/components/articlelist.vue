@@ -16,7 +16,7 @@
                         </router-link>
                         <!-- 详情 -->
                         <router-link tag="div" style="margin-top: 10px;cursor: pointer;" :to="{path:'article/details',query:{Id:item.Id}}">
-                            <span style="overflow-wrap: break-word;color: rgba(255, 255, 255, 0.6);">{{item.About}}</span>    
+                            <span style="word-break: break-all;text-overflow: ellipsis;overflow: hidden;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;color: rgba(255, 255, 255, 0.6);">{{item.About}}</span>
                         </router-link>
                     </div>
                         <!-- 日期阅读量 -->
@@ -68,7 +68,6 @@ export default {
     padding: 0%;
     height: inherit;
     cursor: pointer;
-    overflow: hidden;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
